@@ -1,22 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8" />
-    <style>
-      h1 {text-align: center;}
-    </style>
-  </head>
-  <body>
-    <h1>Hello my name is Victor Smith</h1>
-    <p>I am a programmer, 3d printing hobbyist, and musician</p>
-    <h2>Programming Projects:<br></h2>
-    <p>To Be Implemented as clickable dropdowns<br></p>
-    <h3>3d Prints:</h3>
-    <p></p>
-    <h4>Some of the music I have played:</h4>
-    <p></p>
-  </body>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8" />
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    .collapsible {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .active,
+    .collapsible:hover {
+      background-color: #ccc;
+    }
+
+    .content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: #f1f1f1;
+    }
+    .image {
+      max-width: 400px;
+      max-height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Hello my name is Victor Smith</h1>
+
+  <p>I am a programmer, 3d printing hobbyist, and musician</p>
+  <h2>Programming Projects:<br></h2>
+  <p>To Be Implemented as clickable dropdowns<br></p>
+  <h3>3d Prints:</h3>
+  <button type="button" class="collapsible">Crystal placeholder</button>
+  <div id="crystal" class="content">
+    <img class="image"src="https://1.bp.blogspot.com/-uyvYRw62y1w/Xep_oLQwFcI/AAAAAAAARtY/vApxFCeOn4EAqKpOK4XO4j2fl25e5sdIgCLcBGAsYHQ/s1600/Fabulous%2BQuartz%2Bwith%2BDumortierite%2Binclusions%2Bfrom%2BBrazil.%2BPhoto%2BTimothy%2BPaul.%2Bvia.%2BRhythm%2Bof%2BGems%2B%25281%2529%2B%25281%2529.jpg">
+  </div>
+  <h4>Some of the music I have played:</h4>
+  <p></p>
+
+
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+  </script>
+</body>
+
 </html>
