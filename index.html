@@ -31,6 +31,14 @@
       max-width: 400px;
       max-height: 400px;
     }
+    #back {
+      position:fixed;
+      margin-right: 0px;
+      margin-left: 0px;
+      top: 0px;
+      left: 0px;
+      z-index: -1;
+    }
   </style>
 </head>
 <div id="top"></div>
@@ -62,10 +70,8 @@
   <div id="doc" class="content">
     <img class="image"src="3d/doc.jpg">
   </div>
-  <h2>Some of the music I have played:</h2>
-  <p></p>
 
-
+<img id="back" src="https://cdn.wallpapersafari.com/29/92/9VWQiO.jpg">
 <script>
   var coll = document.getElementsByClassName("collapsible");
   var i;
